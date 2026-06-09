@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="ParallelSuite"
+       parallel="classes"
+       thread-count="3">
+
+    <parameter name="browser" value="chrome"/>
+
+    <listeners>
+        <listener class-name="Utils.TestListener"/>
+    </listeners>
+
+    <test name="Regression">
+
+        <classes>
+            <class name="Test.SearchTest"/>
+            <class name="Test.LoginTest"/>
+            <class name="Test.PaymentTest"/>
+        </classes>
+
+    </test>
+
+</suite>
